@@ -57,7 +57,7 @@ pub struct FileEntry {
 }
 
 fn decompress(compressed: Vec<u8>) -> binread::io::Result<Vec<u8>> {
-    Ok(rust_lzss::decompress(
+    Ok(nintendo_lz::decompress(
         &mut binread::io::Cursor::new(&compressed[4..]),
     ).unwrap())
 }

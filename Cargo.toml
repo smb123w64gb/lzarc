@@ -12,8 +12,9 @@ required-features = ["cli"]
 [dependencies]
 binread = "2.1.1"
 binwrite = "0.2.1"
+nintendo-lz = "0.1.3"
 #rust_lzss = { git = "https://github.com/jam1garner/rust_lzss" }
-rust_lzss = { path = "../rust_lzss" }
+#rust_lzss = { path = "../rust_lzss" }
 
 # CLI
 structopt = { version = "0.3.21", optional = true }

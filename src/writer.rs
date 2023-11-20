@@ -71,7 +71,7 @@ impl LzarcFile {
             .map(|file| {
                 let mut compressed = vec![0x13];
                 compressed.write_all(&as_u24_le(file.data.len())).unwrap();
-                rust_lzss::lazy_encode_lzss11(&file.data, &mut compressed).unwrap();
+                nintendo_lz::compress(&file.data, &mut compressed,nintendo_lz::CompressionLevel::LZ11(1000)).unwrap();
 
                 let compressed_size = compressed.len() as u32;
                 let padding = align(compressed.len(), 0x40) - compressed.len();
